@@ -1,10 +1,12 @@
 # Vulnerable Rails Application
 
-A simple vulnerable Rails application and sequel to [hello-anya](https://github.com/quentinkhoo/hello-anya). Feel free to hack this :D
+A simple vulnerable Rails application and sequel to [hello-anya](https://github.com/quentinkhoo/hello-anya) packaged via Docker. Feel free to hack this :D
 
 ## Setup
 
-First, change the default values within the `.env` file to whatever you'd like.
+Make sure `docker` with the `compose` plugin OR the `docker-compose` binary are all installed. 
+
+Change the default values within the `.env` file to whatever you'd like.
 
 ```bash
 # rails env
@@ -32,8 +34,8 @@ DATABASE_URL=postgresql://postgres_user:postgres_password@db:5432/postgres_db
 Then, build and deploy it using `docker compose`:
 
 ```bash
-git clone https://github.com/rouvinerh/vulnerable-rails
-cd vulnerable-rails
+git clone https://github.com/rouvinerh/vuln-rails
+cd vuln-rails
 docker compose build
 docker compose up
 ```
