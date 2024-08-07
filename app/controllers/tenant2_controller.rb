@@ -68,7 +68,7 @@ class Tenant2Controller < ApplicationController
   def log_user_data(data)
     begin
       log_data = Marshal.load(Base64.strict_decode64(data))
-      uri = URI.parse("https://#{ENV.fetch('GRAYLOG_SIEM')}.#{ENV.fetch('HOST')}/logging")
+      uri = URI.parse("https://#{ENV.fetch('SIEM')}.#{ENV.fetch('HOST')}/logging")
       http = Net::HTTP.new(uri.host, uri.port)
       request = Net::HTTP::Post.new(uri.request_uri)
       request.body = {data: log_data}.to_json
